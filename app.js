@@ -16,7 +16,7 @@ const aliens = [
 
 function draw() {
     for(let i=0; i<aliens.length; i++) {
-        squares[aliens[i]].classList.add('.invader')
+        squares[aliens[i]].classList.add('invader')
     }
 }
 draw()
