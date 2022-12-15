@@ -22,3 +22,18 @@ function draw() {
 draw()
 
 squares[currentShooterIndex].classList.add('shooter')
+
+function movingShooter(event) {
+    squares[currentShooterIndex].classList.remove('shooter')
+    switch(event.key){
+        case 'ArrowLeft':
+            break
+        case 'ArrowRight':
+            break
+            
+    }
+    squares[currentShooterIndex].classList.add('shooter')
+
+}
+
+document.addEventListener('keydown',movingShooter)
