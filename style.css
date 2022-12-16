@@ -6,24 +6,62 @@
 	flex-wrap: wrap;
 }
 
+/* .board {
+    background: linear-gradient(black, white);
+    border: 10px solid black;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(20, 1fr);
+   
+    height: 92vmin;
+  } */
+
 .grid div {
 	width: 20px;
 	height: 20px;
 }
 
 .invader {
-	background-color: rgb(151, 34, 151);
-	border-radius: 10px;
+	/* background-color: rgb(151, 34, 151); */
+  /* border-radius: 10px; */
+  background: url("alien.png");
+  border-radius: 0%;
+  height: 5vh;
+  width: 5vh;
+  background-size: cover;                     
+  background-repeat:   no-repeat;
+  background-position: center center;
 }
 
 .shooter {
-	background-color: rgb(34, 0, 128);
+	/* background-color: rgb(34, 0, 128); */
+    background: url("spaceship.png");
+    border-radius: 0%;
+    height: 10vh;
+    width: 10vh;
+    background-size:cover;                     
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
 .laser {
-	background-color: rgb(255, 136, 0);
+	/* background-color: rgb(255, 136, 0); */
+    background: url("comet.png");
+    border-radius: 0%;
+    height: 3vh;
+    width: 3vh;
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;
 }
 
 .explosion {
-	background-color: red;
+	/* background-color: red; */
+    background: url("boom.png");
+    border-radius: 0%;
+    height: 10vh;
+    width: 10vh;
+    background-size:cover;                     
+    background-repeat:no-repeat;
+    background-position:center;
 }
