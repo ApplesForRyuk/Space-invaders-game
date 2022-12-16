@@ -80,8 +80,13 @@ function moveAliens() {
 
     }
     draw()
+
+    if(squares[currentShooterIndex].classList.contains('invader','shooter'))
+    console.log('GAME OVER')
+    clearInterval(aliensId)
 }
 
 aliensId = setInterval(moveAliens,500)
 
 //aliens have now 500 milisec moving speed
+
