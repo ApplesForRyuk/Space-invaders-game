@@ -23,6 +23,13 @@ function draw() {
 }
 draw()
 
+
+function remove() {
+    for(let i=0; i<aliens.length; i++) {
+        squares[aliens[i]].classList.remove('invader')
+    }
+}
+
 squares[currentShooterIndex].classList.add('shooter')
 
 function movingShooter(event) {
@@ -47,4 +54,5 @@ let aliensTerritory = aliens.length
 function moveAliens() {
     const leftCorner = aliens[0] % width === 0
     const rightCorner = aliens[aliensTerritory - 1] % width === width - 1
+    remove()
 }
