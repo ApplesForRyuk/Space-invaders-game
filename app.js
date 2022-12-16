@@ -100,7 +100,7 @@ aliensId = setInterval(moveAliens,500)
 
 //aliens have now 500 milisec moving speed
 
-function shooter(event) {
+function shoot(event) {
     let laserGun
     let currentLaserIndex = currentShooterIndex
 
@@ -108,6 +108,21 @@ function shooter(event) {
         squares[currentLaserIndex].classList.remove('laser')
         currentLaserIndex -= width
         squares[currentLaserIndex].classList.add('laser')
+
+        if(squares[currentLaserIndex].classList.contains('invader')){
+            squares[currentLaserIndex].classList.remove('laser')
+            squares[currentLaserIndex].classList.remove('invader')
+            squares[currentLaserIndex].classList.add('explosion')
+
+        }
+
+    }
+
+    switch(event.key){
+        case 'ArrowUp':
+            laserGun= setInterval(moveLaser,100)
     }
 }
+
+document.addEventListener('keydown', shoot)
 
