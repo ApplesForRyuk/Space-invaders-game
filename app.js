@@ -5,6 +5,7 @@ let direction = 1
 let aliensId
 let movingToTheRight = true
 const displayResult = document.querySelector('.results')
+let enemiesRemoved = []
 
 
 for (let i=0; i<255; i++){
@@ -22,7 +23,10 @@ const aliens = [
 
 function draw() {
     for(let i=0; i<aliens.length; i++) {
-        squares[aliens[i]].classList.add('invader')
+        if(!enemiesRemoved.includes(i)) {
+            squares[aliens[i]].classList.add('invader')
+        }
+        
     }
 }
 draw()
@@ -93,6 +97,10 @@ function moveAliens() {
             clearInterval(aliensId)
         }
     }
+    if(enemiesRemoved.length === aliensTerritory){
+        displayResult.innerHTML = 'YOU WON!'
+        clearInterval(aliensId)
+    }
     
 }
 
@@ -117,7 +125,10 @@ function shoot(event) {
             setTimeout(()=> squares[currentLaserIndex].classList.remove('explosion'), 200)
             clearInterval(laserGun)
 
-            const alienRemoved = aliens.indexOf(currentLaserIndex)
+            const alienRemoval = aliens.indexOf(currentLaserIndex)
+            enemiesRemoved.push(alienRemoval)
+
+            
 
         }
 
