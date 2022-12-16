@@ -100,3 +100,14 @@ aliensId = setInterval(moveAliens,500)
 
 //aliens have now 500 milisec moving speed
 
+function shooter(event) {
+    let laserGun
+    let currentLaserIndex = currentShooterIndex
+
+    function moveLaser(){
+        squares[currentLaserIndex].classList.remove('laser')
+        currentLaserIndex -= width
+        squares[currentLaserIndex].classList.add('laser')
+    }
+}
+
