@@ -1,6 +1,9 @@
 const grid = document.querySelector('.grid')
 let width = 15
 let currentShooterIndex = 202
+let direction = 1
+let aliensId
+let movingToTheRight = true
 
 
 for (let i=0; i<255; i++){
@@ -55,4 +58,30 @@ function moveAliens() {
     const leftCorner = aliens[0] % width === 0
     const rightCorner = aliens[aliensTerritory - 1] % width === width - 1
     remove()
+
+    if(rightCorner && movingToTheRight){
+        for(i=0; i<aliensTerritory; i++){
+            aliens[i] += width +1
+            direction = -1
+            movingToTheRight = false
+        }
+    }
+
+    if(leftCorner && !movingToTheRight){
+        for(i=0; i<aliensTerritory; i++){
+            aliens[i] += width -1
+            direction = +1
+            movingToTheRight = true
+        }
+    }
+
+    for (let i = 0; i<aliensTerritory; i++){
+        aliens[i] += direction
+
+    }
+    draw()
 }
+
+aliensId = setInterval(moveAliens,500)
+
+//aliens have now 500 milisec moving speed
