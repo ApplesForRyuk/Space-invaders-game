@@ -6,6 +6,7 @@ let aliensId
 let movingToTheRight = true
 const displayResult = document.querySelector('.results')
 let enemiesRemoved = []
+let points = 0
 
 
 for (let i=0; i<255; i++){
@@ -127,6 +128,8 @@ function shoot(event) {
 
             const alienRemoval = aliens.indexOf(currentLaserIndex)
             enemiesRemoved.push(alienRemoval)
+            points++
+            displayResult.innerHTML = points
 
             
 
