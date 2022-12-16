@@ -4,6 +4,7 @@ let currentShooterIndex = 202
 let direction = 1
 let aliensId
 let movingToTheRight = true
+const displayResult = document.querySelector('.results')
 
 
 for (let i=0; i<255; i++){
@@ -82,8 +83,15 @@ function moveAliens() {
     draw()
 
     if (squares[currentShooterIndex].classList.contains('invader','shooter')) {
-        console.log('GAME OVER')
+        displayResult.innerHTML= 'GAME OVER'
         clearInterval(aliensId)
+    }
+
+    for(i = 0; i<aliensTerritory; i++){
+        if(aliens[i] > squares.length + width) {
+            displayResult.innerHTML= 'GAME OVER'
+            clearInterval(aliensId)
+        }
     }
     
 }
