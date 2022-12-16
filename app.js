@@ -114,6 +114,11 @@ function shoot(event) {
             squares[currentLaserIndex].classList.remove('invader')
             squares[currentLaserIndex].classList.add('explosion')
 
+            setTimeout(()=> squares[currentLaserIndex].classList.remove('explosion'), 200)
+            clearInterval(laserGun)
+
+            const alienRemoved = aliens.indexOf(currentLaserIndex)
+
         }
 
     }
