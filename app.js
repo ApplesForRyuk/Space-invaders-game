@@ -2,6 +2,7 @@ const grid = document.querySelector('.grid')
 let width = 15
 let currentShooterIndex = 202
 
+
 for (let i=0; i<255; i++){
     const square = document.createElement('div')
     grid.appendChild(square)
@@ -40,3 +41,10 @@ function movingShooter(event) {
 }
 
 document.addEventListener('keydown',movingShooter)
+
+let aliensTerritory = aliens.length
+
+function moveAliens() {
+    const leftCorner = aliens[0] % width === 0
+    const rightCorner = aliens[aliensTerritory - 1] % width === width - 1
+}
