@@ -70,7 +70,7 @@ function moveAliens() {
     if(leftCorner && !movingToTheRight){
         for(i=0; i<aliensTerritory; i++){
             aliens[i] += width -1
-            direction = +1
+            direction = 1
             movingToTheRight = true
         }
     }
@@ -81,9 +81,11 @@ function moveAliens() {
     }
     draw()
 
-    if(squares[currentShooterIndex].classList.contains('invader','shooter'))
-    console.log('GAME OVER')
-    clearInterval(aliensId)
+    if (squares[currentShooterIndex].classList.contains('invader','shooter')) {
+        console.log('GAME OVER')
+        clearInterval(aliensId)
+    }
+    
 }
 
 aliensId = setInterval(moveAliens,500)
